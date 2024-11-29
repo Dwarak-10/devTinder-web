@@ -30,16 +30,15 @@ const NavBar = () => {
         <div className="flex-none gap-2">
           <div className="form-control"></div>
           <div className="dropdown dropdown-end mx-5">
+            {/* <p>{user.firstName}</p> */}
+
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
+                <img alt="User Photo" src={user?.photoUrl} />
               </div>
             </div>
             <ul
@@ -53,7 +52,10 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link to="/connections">Connections</Link>
+              </li>
+              <li>
+                <Link to="/requests">Requests</Link>
               </li>
               <li>
                 <a onClick={handleLogout}>Logout</a>
