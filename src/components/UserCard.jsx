@@ -22,7 +22,7 @@ const UserCard = ({ user }) => {
   };
   return (
     <div className="card bg-base-300 w-96 shadow-xl">
-      <figure>
+      <figure className="mt-5">
         <img src={photoUrl} alt="photo" />
       </figure>
       <div className="card-body">

@@ -33,8 +33,8 @@ function Connections() {
     );
 
   return (
-    <div className="text-center my-10">
-      <h1 className="text-bold text-white text-3xl">Connections</h1>
+    <div className="text-center mt-10 mb-32">
+      <h1 className="text-bold text-black text-3xl">Connections</h1>
 
       {connections.map((connection) => {
         const { _id, firstName, lastName, age, gender, photoUrl, about } =
@@ -43,7 +43,7 @@ function Connections() {
         return (
           <div
             key={_id}
-            className=" flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
+            className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 md:w-1/3 mx-auto"
           >
             <div>
               <img

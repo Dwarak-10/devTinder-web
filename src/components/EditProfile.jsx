@@ -20,7 +20,7 @@ const EditProfile = ({ user }) => {
     setError("");
     try {
       const res = await axios.patch(
-        BASE_URL + "/profile/edit",
+        BASE_URL + "profile/edit",
         {
           firstName,
           lastName,
@@ -43,7 +43,7 @@ const EditProfile = ({ user }) => {
 
   return (
     <>
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center mb-32 md:mb-24 mt-10">
         <div className="flex justify-center mx-10">
           <div className="card bg-base-300 w-96 shadow-xl">
             <div className="card-body">
@@ -125,9 +125,11 @@ const EditProfile = ({ user }) => {
             </div>
           </div>
         </div>
-        <UserCard
-          user={{ firstName, lastName, photoUrl, age, gender, about }}
-        />
+        <div className="hidden md:flex">
+          <UserCard
+            user={{ firstName, lastName, photoUrl, age, gender, about }}
+          />
+        </div>
       </div>
       {showToast && (
         <div className="toast toast-top toast-center">

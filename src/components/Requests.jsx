@@ -46,15 +46,15 @@ const Requests = () => {
     );
 
   return (
-    <div className="text-center my-10">
-      <h1 className="text-bold text-white text-3xl">Connection Requests</h1>
+    <div className="text-center mt-10 mb-32">
+      <h1 className="text-bold text-black text-3xl">Connection Requests</h1>
       {requests.map((request) => {
         const { _id, firstName, lastName, photoUrl, age, gender, about } =
           request.fromUserId;
         return (
           <div
             key={_id}
-            className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300  mx-auto"
+            className="flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 mx-auto md:w-1/2 w-96"
           >
             <div>
               <img
@@ -70,7 +70,7 @@ const Requests = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
-            <div>
+            <div className="flex gap-3">
               <button
                 className="btn btn-primary mx-2"
                 onClick={() => reviewRequest("rejected", request._id)}
