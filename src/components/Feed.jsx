@@ -8,17 +8,13 @@ import { addFeed } from "../utils/feedSlice";
 function Feed() {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
-  console.log("feed base url : ", BASE_URL);
 
   const getFeed = async () => {
-    console.log("feed 1 :", feed);
     if (feed) return;
     try {
-      console.log(1);
       const res = await axios.get(BASE_URL + "/user/feed", {
         withCredentials: true,
       });
-      console.log("FEED : ", res);
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
       console.log("FEED err : ", err);
@@ -30,10 +26,8 @@ function Feed() {
   }, []);
 
   if (!feed) return;
-  console.log(2);
   if (feed.length <= 0)
     return <h1 className="flex justify-center my-10">No new users founds!</h1>;
-  console.log(3);
   return (
     feed && (
       <div className="flex justify-center my-10">
